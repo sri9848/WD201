@@ -4,12 +4,12 @@
     "description": "My http server application",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Modini vivek kumar",
+    "author": "sridhar",
     "license": "ISC",
     "dependencies": {
-      "minimist": "^1.2.8"
+        "minimist": "^1.2.8"
     }
-  }
+}
