@@ -10,6 +10,7 @@ describe("Todolist Test Suite", () => {
       dueDate: new Date().toISOString().slice(0, 10),
     });
   });
+
   test("Should add new todo", () => {
     const todoItemCount = all.length;
     add({
@@ -19,12 +20,23 @@ describe("Todolist Test Suite", () => {
     });
 
     expect(all.length).toBe(todoItemCount + 1);
+    add({
+      title: "Test2 todo",
+      completed: false,
+      dueDate: new Date().toISOString().slice(0, 10),
+    });
+
+    expect(all.length).toBe(todoItemCount + 2);
   });
 
   test("should mark a todo as complete", () => {
     expect(all[0].completed).toBe(false);
     markAsComplete(0);
     expect(all[0].completed).toBe(true);
+    expect(all[1].completed).toBe(false);
+    markAsComplete(1);
+    expect(all[1].completed).toBe(true);
+
   });
 
   test("checks retrieval of overdue items", () => {
@@ -42,22 +54,16 @@ describe("Todolist Test Suite", () => {
   });
 
   test("checks retrieval of due today items", () => {
-    //const date=new Date();
+    const today = new Date().toISOString().slice(0, 10);
     add({
       title: "Due Today Todo",
       completed: false,
-      dueDate: new Date().toISOString().slice(0, 10),
+      dueDate: today,
     });
+
     const dueTodayItems = dueToday();
-    //expect(dueTodayItems.length).toBe(0);
-    //expect(dueTodayItems.length).toBe(1);
-    //expect(dueTodayItems.length).toBe(2);
-    expect(dueTodayItems.length).toBe(3);
-    // expect(dueTodayItems.length).toBe(4);
-    // expect(dueTodayItems.length).toBe(5);
-    expect(dueTodayItems[0].dueDate).toBe(
-      new Date().toISOString().slice(0, 10),
-    );
+    expect(dueTodayItems.length).toBe(4);
+    expect(dueTodayItems[0].dueDate).toBe(today);
   });
 
   test("checks retrieval of due later items", () => {
@@ -72,4 +78,5 @@ describe("Todolist Test Suite", () => {
     expect(dueLaterItems.length).toBe(1);
     expect(dueLaterItems[0].dueDate).toBe(tdate.toISOString().slice(0, 10));
   });
+
 });
