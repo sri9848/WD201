@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const http = require("http");
 const fs = require("fs");
 const argv = require("minimist")(process.argv.slice(2));
@@ -6,6 +7,17 @@ const argv = require("minimist")(process.argv.slice(2));
 let homeContent = "";
 let projectContent = "";
 let registrationContent ="";
+=======
+const argv = require("minimist")(process.argv.slice(2));
+
+
+
+const http = require("http");
+const fs = require("fs");
+
+let homeContent = "";
+let projectContent = "";
+>>>>>>> 29d6465f66ba75489335b9a87609ae0a18fed890
 
 fs.readFile("home.html", (err, home) => {
   if (err) {
@@ -28,6 +40,10 @@ fs.readFile("registration.html", (err, registration) => {
   registrationContent = registration;
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 29d6465f66ba75489335b9a87609ae0a18fed890
 http
   .createServer((request, response) => {
     let url = request.url;
@@ -37,7 +53,11 @@ http
         response.write(projectContent);
         response.end();
         break;
+<<<<<<< HEAD
       case "/registration":
+=======
+       case "/registration":
+>>>>>>> 29d6465f66ba75489335b9a87609ae0a18fed890
         response.write(registrationContent);
         response.end();
         break;
@@ -46,7 +66,15 @@ http
         response.end();
         break;
     }
+<<<<<<< HEAD
   }) 
   .listen(argv.port || 3000,()=>{
     console.log(`running on ${argv.port || 3000}`);
   });
+=======
+  })
+  .listen(argv.port || 3000, () => {
+    console.log(`Server is running on port ${argv.port || 3000}`);
+  });
+  
+>>>>>>> 29d6465f66ba75489335b9a87609ae0a18fed890

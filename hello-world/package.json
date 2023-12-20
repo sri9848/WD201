@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "author": "sridhar",
+=======
+  "author": "",
+>>>>>>> 29d6465f66ba75489335b9a87609ae0a18fed890
   "license": "ISC"
 }

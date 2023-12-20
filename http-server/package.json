@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "http-server",
     "version": "1.0.0",
     "description": "My http server application",
@@ -12,4 +13,18 @@
     "dependencies": {
         "minimist": "^1.2.8"
     }
+=======
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sridhar",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+>>>>>>> 29d6465f66ba75489335b9a87609ae0a18fed890
 }
